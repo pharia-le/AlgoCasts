@@ -17,14 +17,45 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-    for (let i=0; i<n; i++) {
-        let hashes = ''
-        let spaces = ''
-        while (hashes.length < i+1) hashes += '#'
-        while (hashes.length + spaces.length !== n) spaces += ' '
-        console.log(`${hashes}${spaces}`)
+// function steps(n) {
+//     for (let i=0; i<n; i++) {
+//         let hashes = ''
+//         let spaces = ''
+//         while (hashes.length < i+1) hashes += '#'
+//         while (hashes.length + spaces.length !== n) spaces += ' '
+//         console.log(`${hashes}${spaces}`)
+//     }
+// }
+
+// function steps(n) {
+//     for (let row=0; row<n; row++) {
+//         let stair = ''
+
+//         for (let col=0; col<n; col++) {
+//             if (col <= row) {
+//                 stair += "#"
+//             } else {
+//                 stair += " "
+//             }
+//         }
+
+//         console.log(stair)
+//     }
+// }
+
+function steps(n, row = 0, stair = '') {
+    if (n === row) {
+      return;
     }
-}
+  
+    if (n === stair.length) {
+      console.log(stair);
+      return steps(n, row + 1);
+    }
+  
+    const add = stair.length <= row ? '#' : ' ';
+    steps(n, row, stair + add);
+  }
+  
 
 module.exports = steps;
