@@ -32,10 +32,10 @@
 //     return chunked
 // }
 
-function chunk(array, size) {
+function chunk(arr, size) {
     let chunked = []
-    for (let i=0; i<array.length; i+=size) {
-        chunked.push(array.slice(i, i + size))
+    for (let i=0; i<arr.length; i+=size) {
+        chunked.push(arr.slice(i, i + size))
     }
     return chunked
 }
