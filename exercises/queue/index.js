@@ -8,17 +8,31 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
+// class Queue {
+//     constructor() {
+//         this.line = []
+//     }
+
+//     add(n) {
+//         return this.line.unshift(n)
+//     }
+
+//     remove() {
+//         return this.line.pop()
+//     }
+// }
+
 class Queue {
     constructor() {
-        this.line = []
+        this.data = []
     }
 
-    add(n) {
-        return this.line.unshift(n)
+    add(record) {
+        this.data.unshift(record)
     }
 
     remove() {
-        return this.line.pop()
+        return this.data.pop()
     }
 }
 
